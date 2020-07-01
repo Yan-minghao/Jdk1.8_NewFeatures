@@ -1,13 +1,9 @@
 package com.sirius.java8;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.function.Consumer;
-
 import org.junit.Test;
+
+import java.util.*;
+import java.util.function.Consumer;
 
 /*
  * 一、Lambda 表达式的基础语法：Java8中引入了一个新的操作符 "->" 该操作符称为箭头操作符或 Lambda 操作符
@@ -106,9 +102,23 @@ public class TestLambda2 {
 		System.out.println(num);
 		
 		System.out.println(operation(200, (y) -> y + 200));
+		System.out.println();
 	}
 	
 	public Integer operation(Integer num, MyFun mf){
 		return mf.getValue(num);
+	}
+
+	@Test
+	public void testLambda(){
+		  int i=10;
+		try {
+			Runnable runnable = () -> System.out.println("11");
+			System.out.println(runnable);
+			System.out.println("_______________");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
